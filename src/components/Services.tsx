@@ -1,3 +1,7 @@
+"use client";
+
+import FadeUpWrapper from "./FadeUpWrapper";
+
 export default function Services() {
   const services = [
     {
@@ -43,42 +47,43 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="bg-slate-50 py-20 sm:py-28">
+    <section id="services" className="bg-slate-900 py-12 sm:py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="text-orange-500 text-sm font-bold uppercase tracking-widest">
-            What We Do
-          </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 uppercase tracking-tight">
-            Our Expertise
-          </h2>
-          <div className="mt-4 w-16 h-1 bg-orange-500 mx-auto" />
-        </div>
+        <FadeUpWrapper>
+          <div className="text-center mb-10 sm:mb-16">
+            <span className="text-orange-500 text-sm font-bold uppercase tracking-widest">
+              What We Do
+            </span>
+            <h2 className="mt-3 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white uppercase tracking-tight">
+              Our Expertise
+            </h2>
+            <div className="mt-4 w-16 h-1 bg-orange-500 mx-auto" />
+          </div>
+        </FadeUpWrapper>
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {services.map((service, i) => (
-            <div
-              key={i}
-              className="group bg-white rounded-sm p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-slate-100"
-            >
-              <div className="text-orange-500 mb-6 transition-transform duration-300 group-hover:scale-110">
-                {service.icon}
+            <FadeUpWrapper key={i} delay={i * 0.15}>
+              <div className="group bg-slate-800 rounded-sm p-5 sm:p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-slate-700 h-full">
+                <div className="text-orange-500 mb-6 transition-transform duration-300 group-hover:scale-110">
+                  {service.icon}
+                </div>
+                <h3 className="text-lg font-extrabold text-white uppercase tracking-wide mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  {service.description}
+                </p>
+                <div className="mt-6 flex items-center gap-1 text-orange-500 text-xs font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Learn More
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 uppercase tracking-wide mb-3">
-                {service.title}
-              </h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                {service.description}
-              </p>
-              <div className="mt-6 flex items-center gap-1 text-orange-500 text-xs font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                Learn More
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </div>
-            </div>
+            </FadeUpWrapper>
           ))}
         </div>
       </div>

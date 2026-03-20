@@ -1,3 +1,7 @@
+"use client";
+
+import FadeUpWrapper from "./FadeUpWrapper";
+
 export default function TrustBanner() {
   const items = [
     {
@@ -35,19 +39,18 @@ export default function TrustBanner() {
   ];
 
   return (
-    <section className="bg-slate-800 py-6">
+    <section className="bg-slate-800 py-4 sm:py-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {items.map((item, i) => (
-            <div
-              key={i}
-              className="flex items-center gap-3 justify-center"
-            >
-              <div className="text-orange-500 shrink-0">{item.icon}</div>
-              <span className="text-white text-sm font-semibold uppercase tracking-wider">
-                {item.label}
-              </span>
-            </div>
+            <FadeUpWrapper key={i} delay={i * 0.1}>
+              <div className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-3 justify-center text-center sm:text-left">
+                <div className="text-orange-500 shrink-0">{item.icon}</div>
+                <span className="text-white text-[11px] sm:text-sm font-semibold uppercase tracking-wider">
+                  {item.label}
+                </span>
+              </div>
+            </FadeUpWrapper>
           ))}
         </div>
       </div>

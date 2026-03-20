@@ -23,8 +23,8 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white shadow-md"
-          : "bg-white/90 backdrop-blur-sm"
+          ? "bg-slate-900/95 shadow-lg shadow-black/20 backdrop-blur-sm"
+          : "bg-slate-900/80 backdrop-blur-sm"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,8 +36,8 @@ export default function Navbar() {
                 <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z" />
               </svg>
             </div>
-            <span className="text-xl font-extrabold tracking-tight text-slate-900 uppercase">
-              Solid<span className="text-orange-500">State</span>
+            <span className="text-xl font-extrabold tracking-tight text-white uppercase">
+              Sai<span className="text-orange-500"> Shraddha</span>
             </span>
           </a>
 
@@ -47,7 +47,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-semibold text-slate-600 hover:text-slate-900 uppercase tracking-wider transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full"
+                className="text-sm font-semibold text-slate-300 hover:text-white uppercase tracking-wider transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full"
               >
                 {link.label}
               </a>
@@ -71,7 +71,7 @@ export default function Navbar() {
           <button
             id="mobile-menu-button"
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden p-2 rounded-sm text-slate-700 hover:bg-slate-100 transition-colors"
+            className="md:hidden p-2 rounded-sm text-slate-300 hover:bg-slate-800 transition-colors"
             aria-label="Toggle menu"
           >
             {menuOpen ? (
@@ -89,7 +89,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 bg-white border-t border-slate-100 ${
+        className={`md:hidden overflow-hidden transition-all duration-300 bg-slate-900 border-t border-slate-800 ${
           menuOpen ? "max-h-80" : "max-h-0"
         }`}
       >
@@ -99,7 +99,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="block text-sm font-semibold text-slate-700 hover:text-orange-500 uppercase tracking-wider py-2 transition-colors"
+              className="block text-sm font-semibold text-slate-300 hover:text-orange-500 uppercase tracking-wider py-2 transition-colors"
             >
               {link.label}
             </a>
